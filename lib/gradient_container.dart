@@ -13,12 +13,23 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: Center(
+      child: TextCenter ()
+    );
+  }
+}
+
+
+class TextCenter extends StatelessWidget {
+  const TextCenter({super.key});
+
+  @override
+  Widget build(context) {
+      return Center(
           child: Text('Hello world !',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 28,
-              ))),
-    );
+              )));
+    // throw UnimplementedError();
   }
 }

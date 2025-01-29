@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:first_app/styled_text.dart';
 
-var startAlignment = Alignment.topLeft ;
-var endAlignment = Alignment.bottomRight ;
-
+var startAlignment = Alignment.topLeft;
+var endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.color1, this.color2, {super.key});
+
+  const GradientContainer.purple({super.key})
+      : color1 = Colors.deepPurple,
+        color2 = Colors.deepPurpleAccent;
 
   final Color color1;
   final Color color2;
@@ -14,15 +17,20 @@ class GradientContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [color1, color2],
-          begin: startAlignment,
-          end: endAlignment,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [color1, color2],
+            begin: startAlignment,
+            end: endAlignment,
+          ),
         ),
-      ),
-      child: StyledText ('Hello World!'),
-    );
+        child: Center(
+          child: Image.asset(
+            'assets/images/dice-1.png',
+            width: 200,
+          ),
+          // StyledText ('Hello World!'),
+        ));
   }
 }
 
@@ -48,5 +56,3 @@ class GradientContainer extends StatelessWidget {
 //     );
 //   }
 // }
-
-

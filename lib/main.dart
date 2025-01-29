@@ -5,9 +5,9 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: GradientContainer(Colors.deepPurple, Colors.deepPurpleAccent),
+        // body: GradientContainer(Colors.deepPurple, Colors.deepPurpleAccent),
+        body: GradientContainer.purple(), //pcq on a défini un 2e constructeur
       ),
     ),
   );
 }
-

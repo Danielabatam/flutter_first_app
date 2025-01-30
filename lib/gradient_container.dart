@@ -14,6 +14,10 @@ class GradientContainer extends StatelessWidget {
   final Color color1;
   final Color color2;
 
+  void rollDice() {
+    // ...
+  }
+
   @override
   Widget build(context) {
     return Container(
@@ -25,9 +29,21 @@ class GradientContainer extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Image.asset(
-            'assets/images/dice-1.png',
-            width: 200,
+          child: Column( // on aurait pu utiliser Row(); qui utilise l'horizontal
+            children: [
+              Image.asset(
+                'assets/images/dice-1.png',
+                width: 200,
+              ),
+              // ElevatedButton(onPressed: onPressed, child: child) // pour afficher un bouton avec une couleur d'arrière plan et une légère ombre
+              // OutlinedButton(onPressed: onPressed, child: child)// Dipose d'un bouton de contour qui n'a pas d'arrière plan mais une bordure
+              // TextButton(onPressed: onPressed, child: child) // pour afficher un bouton qui n'est qu'un texte sur lequel on peut appuyer
+              TextButton(
+                  // onPressed: () {}, // methode 1; écrire la fonction ici
+                  onPressed: rollDice,
+                  child: const Text('Roll Dice')
+              )
+            ],
           ),
           // StyledText ('Hello World!'),
         ));

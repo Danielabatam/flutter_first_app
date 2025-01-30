@@ -15,7 +15,7 @@ class GradientContainer extends StatelessWidget {
   final Color color2;
 
   void rollDice() {
-    // ...
+    //...
   }
 
   @override
@@ -29,46 +29,35 @@ class GradientContainer extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Column( // on aurait pu utiliser Row(); qui utilise l'horizontal
+          child: Column(
+            mainAxisSize:
+                MainAxisSize.min, // pour aligner le contenu à la verticale
             children: [
               Image.asset(
                 'assets/images/dice-1.png',
                 width: 200,
               ),
-              // ElevatedButton(onPressed: onPressed, child: child) // pour afficher un bouton avec une couleur d'arrière plan et une légère ombre
-              // OutlinedButton(onPressed: onPressed, child: child)// Dipose d'un bouton de contour qui n'a pas d'arrière plan mais une bordure
-              // TextButton(onPressed: onPressed, child: child) // pour afficher un bouton qui n'est qu'un texte sur lequel on peut appuyer
+              const SizedBox(height: 20),
+              // StyledText(
+              //   text: 'Welcome to the Dice Roller App',
+              //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              // ),
               TextButton(
-                  // onPressed: () {}, // methode 1; écrire la fonction ici
-                  onPressed: rollDice,
-                  child: const Text('Roll Dice')
+                onPressed: rollDice,
+                style: TextButton.styleFrom(
+                    // primary: Colors.white,
+                    // backgroundColor: Colors.black,
+
+                    // padding: EdgeInsets.only(
+                    //     left: 20, right: 20, top: 10, bottom: 10),
+
+                    foregroundColor: Colors.white, // la couleur du texte
+                    textStyle: const TexteStyle(
+                        fontSize: 28, fontWeight: FontWeight.bold)),
+                child: const Text('Roll Dice'),
               )
             ],
           ),
-          // StyledText ('Hello World!'),
         ));
   }
 }
-
-// class GradientContainer extends StatelessWidget {
-//   const GradientContainer({super.key, required this.colors});
-//
-//   final List<Color> colors;
-//
-//   @override
-//   Widget build(context) {
-//     return Container(
-//       decoration: BoxDecoration(
-//         gradient: LinearGradient(
-//           colors: colors, //[
-//           //   Colors.deepPurple,
-//           //   Colors.deepPurpleAccent
-//           // ],
-//           begin: startAlignment,
-//           end: endAlignment,
-//         ),
-//       ),
-//       child: StyledText ('Hello World!'),
-//     );
-//   }
-// }

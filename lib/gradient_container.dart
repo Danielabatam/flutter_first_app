@@ -4,15 +4,17 @@ import 'package:first_app/styled_text.dart';
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
-class GradientContainer extends StatelessWidget {
-  const GradientContainer(this.color1, this.color2, {super.key});
+class GradientContainer extends StatefulWidget {
+  GradientContainer(this.color1, this.color2, {super.key});
 
-  const GradientContainer.purple({super.key})
+  GradientContainer.purple({super.key})
       : color1 = Colors.deepPurple,
         color2 = Colors.deepPurpleAccent;
 
   final Color color1;
   final Color color2;
+
+  var activeDiceImage = 'assets/images/dice-2.png';
 
   void rollDice() {
     //...
@@ -52,7 +54,7 @@ class GradientContainer extends StatelessWidget {
                     //     left: 20, right: 20, top: 10, bottom: 10),
 
                     foregroundColor: Colors.white, // la couleur du texte
-                    textStyle: const TexteStyle(
+                    textStyle: const TextStyle(
                         fontSize: 28, fontWeight: FontWeight.bold)),
                 child: const Text('Roll Dice'),
               )

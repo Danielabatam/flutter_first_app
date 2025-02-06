@@ -4,7 +4,7 @@ import 'package:first_app/styled_text.dart';
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
-class GradientContainer extends StatefulWidget {
+class GradientContainer extends StatelessWidget {
   GradientContainer(this.color1, this.color2, {super.key});
 
   GradientContainer.purple({super.key})
@@ -16,9 +16,7 @@ class GradientContainer extends StatefulWidget {
 
   var activeDiceImage = 'assets/images/dice-2.png';
 
-  void rollDice() {
-    //...
-  }
+  void rollDice() {}
 
   @override
   Widget build(context) {
@@ -31,35 +29,7 @@ class GradientContainer extends StatefulWidget {
           ),
         ),
         child: Center(
-          child: Column(
-            mainAxisSize:
-                MainAxisSize.min, // pour aligner le contenu à la verticale
-            children: [
-              Image.asset(
-                'assets/images/dice-1.png',
-                width: 200,
-              ),
-              const SizedBox(height: 20),
-              // StyledText(
-              //   text: 'Welcome to the Dice Roller App',
-              //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              // ),
-              TextButton(
-                onPressed: rollDice,
-                style: TextButton.styleFrom(
-                    // primary: Colors.white,
-                    // backgroundColor: Colors.black,
-
-                    // padding: EdgeInsets.only(
-                    //     left: 20, right: 20, top: 10, bottom: 10),
-
-                    foregroundColor: Colors.white, // la couleur du texte
-                    textStyle: const TextStyle(
-                        fontSize: 28, fontWeight: FontWeight.bold)),
-                child: const Text('Roll Dice'),
-              )
-            ],
-          ),
+          child: // ToDo
         ));
   }
 }
